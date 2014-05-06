@@ -1,0 +1,13 @@
+{
+  "name": "nw-demo",
+  "main": "index.html",
+  "window": {
+    "kiosk": false,
+    "toolbar": false,
+    "frame": true,
+    "icon": "icon.png",
+    "position": "center",
+    "width":1024,
+    "height":768
+  }
+}

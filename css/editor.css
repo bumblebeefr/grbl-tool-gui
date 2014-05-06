@@ -1,0 +1,10 @@
+#gcode-editor{
+	height:100%;
+	
+}
+.CodeMirror{
+	font-family: VeraMono, Courier New, monospace;
+}
+#gcodeFileInput{
+	display:none;
+}

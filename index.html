@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html>
+  <head>
+	<meta charset="UTF-8">
+	<title>grbl-tool-gui</title>
+	<link rel=stylesheet href="lib/font-awesome/css/font-awesome.css">
+	<link rel=stylesheet href="lib/split-pane/split-pane.css">
+	<link rel=stylesheet href="fonts/fonts.css">
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" href="lib/bootstrap/css/bootstrap-theme.min.css">
+	<link rel="stylesheet" media="screen" href="lib/codemirror/lib/codemirror.css">
+	<link rel="stylesheet" media="screen" href="lib/codemirror/addon/dialog/dialog.css">
+	<link rel=stylesheet href="css/style.css">
+	<link rel=stylesheet href="css/console.css">
+	<link rel=stylesheet href="css/editor.css">
+	<link rel=stylesheet href="css/pad.css">
+  </head>
+  <body class="">
+<!--     <pre id="status"></pre>
+    <a href="#" id="start">start</a>
+    <a href="#" id="hold">hold</a>
+    <a href="#" id="status">status</a>
+    <a href="#" id="reset">reset</a> -->
+    
+		<div class="split-pane vertical-percent">
+			<div class="split-pane-component" id="left-component">
+				<ul class="nav nav-tabs" id="left-tabs">
+				  <li class="active"><a href="#console" data-toggle="tab" id="tab-console"><i class="fa fa-desktop"></i> Console</a></li>
+				  <li><a href="#gcode-editor" data-toggle="tab" id="tab-editor"><i class="fa fa-file-text-o"></i> Gcode</a></li>
+				</ul>
+				<div class="tab-content" id="left-tab-content">
+					<div id="console" class="tab-pane active">
+						<div class="out">
+						
+						</div>
+					    <input type="text" id="cmd" />
+					</div>
+					<div id="gcode-editor" class="tab-pane">
+						<input type="file" id="gcodeFileInput" accept=".mpt,.mpf,.nc,.ngc,.gcode,.gc,.txt,text/plain" />
+						<div class="btn-group center">
+						  <button type="button" class="btn  btn-xs btn-default" id="btn-open-file">
+						  	<i class="fa fa-folder-open-alt"></i>&nbsp;&nbsp;Open file
+						  </button>
+						  <button type="button" class="btn  btn-xs btn-default" id="btn-search-in-file" title="Ctrl+F">
+						  	<i class="fa fa-search"></i>&nbsp;&nbsp;Search
+						  </button>
+						  <button type="button" class="btn  btn-xs btn-default" id="btn-replace-in-file" title="Ctrl+Maj+F">
+						  	<i class="fa fa-pencil"></i>&nbsp;&nbsp;Replace
+						  </button>
+						  <button type="button" class="btn  btn-xs btn-default" id="btn-stream-file">
+						  	<i class="fa fa-bolt"></i>&nbsp;&nbsp;Execute GCODE
+						  </button>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="split-pane-divider" id="my-divider"></div>
+			<div class="split-pane-component" id="right-component">
+				<div id="view">
+					<div id="view-main-pane">
+				 		<dl class="dl-horizontal">
+							<dt>Connection : </dt>
+							<dd id="serial-status"></dd>
+							<dt>Grbl State : </dt>
+							<dd id="grb-status"></dd>
+							<dt>Streaming : </dt>
+							<dd id="streaming"></dd>
+					    </dl>
+				
+						<table  id="position-table" class="table table-condensed">
+							<thead>
+								<tr>
+									<th>&nbsp</th>
+									<th>X Axis</th>
+									<th>Y axis</th>
+									<th>Z axis</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th>Machine</th>
+									<td id="machine-x">0.000</td>
+									<td id="machine-y">0.000</td>
+									<td id="machine-z">0.000</td>
+								</tr>
+								<tr>
+									<th>Work</th>
+									<td id="work-x">0.000</td>
+									<td id="work-y">0.000</td>
+									<td id="work-z">0.000</td>
+								</tr>
+							</tbody>
+						</table>
+					
+						<br/>
+						<div id="menu-controls">
+							<div class="btn-group center">
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-hold" title="Feed hold">
+							  	<i class="fa fa-pause"></i>&nbsp;&nbsp;Hold
+							  </button>
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-start" title="Cycle start / Resume feed">
+							  	<i class="fa fa-play"></i>&nbsp;&nbsp;Start
+							  </button>
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-reset" title="Soft reset Grbl">
+							  	<i class="fa fa-times-circle"></i>&nbsp;&nbsp;Reset
+							  </button>
+							</div>
+							&nbsp;
+							<div class="btn-group center">
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-unlock" title="Feed hold">
+							  	<i class="fa fa-unlock"></i>&nbsp;&nbsp;Unlock
+							  </button>
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-home" title="Cycle start / Resume feed">
+							  	<i class="fa fa-home"></i>&nbsp;&nbsp;Homing
+							  </button>
+							</div>
+						</div>
+					</div>
+					<br/>
+					<ul class="nav nav-tabs" id="right-tabs">
+					  <li class="active"><a href="#control-pad" data-toggle="tab" id="tab-console"><i class="fa fa-gamepad"></i>Contrôle pad</a></li>
+					</ul>
+					<div class="tab-content" id="right-tab-content">
+						<div id="control-pad" class="tab-pane active">
+							
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+	<div style="display:none">
+		<span id="flyingStatus"></span>
+	</div>
+	
+    <script src="lib/keys.js"></script>
+    <script src="lib/jquery.js"></script>
+    <script src="lib/i18next-1.7.2.js"></script>
+    <script>
+		i18n.init({
+			lng:"en",
+			getAsync : false,
+			resGetPath : 'i18n/__ns__-__lng__.json',
+			fallbackLng : "en",
+			debug : true
+		});
+		i18n.addPostProcessor("br", function(value, key, options) {
+			return value.split("\n").join("<br/>");
+		});
+		var t = i18n.t;
+    </script>
+    <script src="lib/jquery.scrollTo-min.js"></script>
+    <script src="lib/jquery-ui/js/jquery-ui-1.10.4.custom.js"></script>
+    <script src="lib/split-pane/split-pane.js"></script>
+    <script src="lib/riot.js"></script>
+    <script src="lib/underscore.js"></script>
+    <script src="lib/underscore.string.js"></script>
+    <script>_.mixin(_.str.exports());</script>
+    <script src="lib/bootstrap/js/bootstrap.min.js"></script>
+    <script src="lib/moment-with-langs.js"></script>
+    <script src="lib/numeral/numeral.js"></script>
+
+	<script src="lib/codemirror/lib/codemirror.js"></script>
+	<script src="lib/codemirror/mode/gcode/gcode.js"></script>
+	<script src="lib/codemirror/addon/dialog/dialog.js"></script>
+	<script src="lib/codemirror/addon/search/searchcursor.js"></script>
+	<script src="lib/codemirror/addon/search/search.js"></script>
+	<script src="lib/codemirror/addon/search/match-highlighter.js"></script>
+	
+    <script src="grbl/Serial.js"></script>
+    <script src="grbl/Grbl.js"></script>
+    <script src="grbl/Console.js"></script>
+    <script src="grbl/Editor.js"></script>
+    <script src="grbl/Pad.js"></script>
+    <script src="grbl/Menu.js"></script>
+    <script>
+
+		function windowResize() {
+			$("#main").height($(window).height());
+		}
+
+		
+
+		var statusText = {
+				 unknown : '<strong class="red"><i class="fa fa-minus-circle"></i> '+t("status.panel.Idle")+'</strong>',
+				 Disconnected : '<strong class="red"><i class="fa fa-minus-circle"></i> '+t("status.panel.Idle")+'</strong>',
+				 Idle : '<i class="fa fa-moon-o"></i> '+t("status.panel.Idle"),
+				 Queue : '<strong class="yellow"><i class="fa fa-pause"></i> '+t("status.panel.Queue")+'</strong>',
+				 Run : '<strong class="green"><i class="fa fa-cogs"></i> '+t("status.panel.Run")+'</strong>',
+				 Hold : '<strong class="yellow"><i class="fa fa-pause"></i> '+t("status.panel.Hold")+'</strong>',
+				 Home : '<strong class="green"><i class="fa fa-home"></i> '+t("status.panel.Home")+'</strong>',
+				 Alarm : '<strong class="red"><i class="fa fa-exclamation-triangle"></i> '+t("status.panel.Alarm")+'</strong>',
+				 Check : '<strong class="blue"><i class="fa fa-eye-slash"></i> '+t("status.panel.Check")+'</strong>'
+		};
+		
+		Grbl.on('status',function(status){
+			_.each(['x','y','z'],function(axe,i){
+				$("#machine-"+axe).text(numeral(status.MPos[i]).format("0.000"));
+				$("#work-"+axe).text(numeral(status.WPos[i]).format("0.000"));
+			});
+			$("#grb-status").html(statusText[status.status] || statusText[status.unknown] );
+		});
+		Grbl.on('disconnected',function(){
+			$('#serial-status').html('<strong class="red"><i class="fa fa-minus-circle"></i> '+t("grbl.disconnected")+'</strong>')
+		});
+		Grbl.on('initialized', function(o) {
+			$('#serial-status').html('<div class="cmdInfo"><i class="fa fa-bolt"></i> '+t("grbl.connected",o)+'</div>');
+		});
+
+		Grbl.on('streaming.start', function(pct,duration) {
+			var html = '<div id="streamingProgress">'+t("streaming.on")+'</div>';
+			html +='<div class="progress progress-striped active">';
+			html +='<div id="streamingProgressBar" class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 60%;">';
+			html +='</div>';
+			html +='</div>';
+			$("#streaming").html(html);
+		});
+		Grbl.on('streaming.end', function(pct,duration) {
+			$("#streaming").text(t("streaming.off"));
+		});
+		Grbl.on('streaming.abort', function(pct,duration) {
+			$("#streaming").text(t("streaming.abort"));
+		});
+		Grbl.on('streaming.update', function(pct,duration) {
+			var d = moment.duration(duration,'seconds');
+			$("#streamingProgress").text(t('streaming.status',{
+				percent : numeral(pct).format('0.0'),
+				h : _.pad(d.hours(),2,'0'),
+				m : _.pad(d.minutes(),2,'0'),
+				s : _.pad(d.seconds(),2,'0')
+			}));
+			$("#streamingProgressBar").css('width',pct+"%");
+		});
+		
+		$(function(){
+			$("#btn-hold").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.hold();
+			});
+			$("#btn-start").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.start();
+			});
+			$("#btn-reset").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.reset();
+			});
+			$("#btn-unlock").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.send("$X");
+			});
+			$("#btn-home").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.send("$H");
+			});
+		});
+
+		
+	</script>
+
+  </body>
+</html>

@@ -1,0 +1,55 @@
+#control-pad{
+	margin-top: 1em;
+	-webkit-filter: blur(5px);
+	opacity: 0.7;
+}
+
+#control-pad.enabled {
+	-webkit-filter: blur(0px);
+	opacity: 1;
+}
+
+g.xy_button>path,g.z_button>path {
+	fill: #FFFFFF;
+	filter: url(#dropshadow);
+	opacity: 0.5;
+	stroke: #000000;
+	stroke-width: 0.2;
+}
+
+g.xy_button path.external_xy_button,g.z_button path.external_z_button {
+	fill: #888888;
+	opacity: 1;
+}
+
+#control-pad.enabled g.xy_button:hover path,#control-pad.enabled g.z_button:hover path
+	{
+	fill: #880000;
+	cursor: pointer;
+}
+
+g.home_button>path {
+	fill: #666666;
+	filter: url(#bevel);
+}
+
+g.home_button {
+	opacity: 0.6;
+	cursor: pointer;
+}
+
+#control-pad.enabled g.home_button:hover {
+	opacity: 1;
+}
+
+#bt_home_x>path {
+	fill: #d3b55f;
+}
+
+#bt_home_y>path {
+	fill: #5f8dd3;
+}
+
+#bt_home_z>path {
+	fill: #8dd35f;
+}

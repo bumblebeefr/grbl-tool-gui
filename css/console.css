@@ -1,0 +1,108 @@
+#console {
+	font-family: VeraMono, Courier New, monospace;
+	
+	height: 100%;
+	background-color: #F0F0F0;
+}
+
+#console .out {
+	height: calc(100% -         24px);
+	overflow: auto;
+}
+#console .out>div{
+	border-top:dotted 1px #CCCCCC;
+	clear:both;
+}
+#console .out .cmd{
+	padding:0 1em;
+}
+
+#cmd {
+	height: 22px;
+	border: none;
+	border-top: dotted 1px #999;
+	background-color: transparent;
+	margin-right: 3px;
+	font-weight:bold;
+	display:block;
+	width:100%;
+}
+
+#cmd:focus {
+	outline: none;
+}
+
+#console button {
+	width: 90px;
+}
+
+#console.disabled #cmd {
+	background:transparent url(../img/hash.png);
+}
+
+#console>div {
+	border-bottom: solid 1px #F0F0F0;
+	clear: both;
+}
+
+#console .cmdWarning {
+	background-color: #fcf8e3;
+	border-color: #faebcc;
+	color: #8a6d3b;
+	padding: 0 1em;
+}
+
+#console .cmdError {
+	background-color: #f2dede;
+	border-color: #ebccd1;
+	color: #a94442;
+	padding: 0 1em;
+}
+#console .cmdInfo {
+	background-color: #d9edf7;
+	border-color: #bce8f1;
+	color: #31708f;
+	padding: 0 1em;
+}
+
+#console .cmdLine li {
+	list-style-type: none;
+	font-size: 0.8em;
+	color: #666666;
+	margin-left: 3em;
+}
+
+#console .cmdLine .status {
+	text-transform: uppercase;
+	float: right;
+}
+
+#console .cmdLine.done_ok .cmd {
+	background-color: #dff0d8;
+}
+
+#console .cmdLine.done_aborted .cmd {
+	background-color: #dff0d8;
+}
+#console .cmdLine.done_ok .status {
+	color: #3c763d;
+}
+
+#console .cmdLine.done_ko .status {
+	color: #a94442;
+}
+
+#console .cmdLine.done_ko .cmd {
+	background-color: #f2dede;
+}
+
+#console .cmdLine.done_ko li {
+	color: #a94442;
+}
+
+#flyingStatus {
+	font-weight: bold;
+	font-style: italic;
+	font-variant: small-caps;
+	color: #8a6d3b;
+}

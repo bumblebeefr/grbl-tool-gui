@@ -1,0 +1,128 @@
+/**
+* Error:
+* background-color: #f2dede;
+* border-color: #ebccd1;
+* color: #a94442;
+* 
+* Warning
+* background-color: #fcf8e3;
+* border-color: #faebcc;
+* color: #8a6d3b;
+* 
+* Info
+* background-color: #d9edf7;
+* border-color: #bce8f1;
+* color: #31708f;
+* 
+* Ok
+* background-color: #dff0d8;
+* border-color: #d6e9c6;
+* color: #3c763d;
+* 
+**/
+
+.blue, .info{
+	color:#31708f;	
+}
+.green, .ok{
+	color:#3c763d;	
+}
+.yellow, .warn, .warning{
+	color:#8a6d3b;	
+}
+.red, .error{
+	color:#a94442;	
+}
+
+
+html {
+	height: 100%;
+	/*box-shadow: inset 0 2px 6px rgba(0, 0, 0, 0.5);*/
+}
+
+body { 
+	background: #FFFFFF url(../img/grbl-tool-logo-iso.png) bottom right no-repeat; 
+	height: 100%;
+	margin: 0;
+	padding: 0;
+	overflow: auto;
+	font-size: 9pt;
+	transition:box-shadow 1s;
+}
+
+a, a:hover,a:active {
+	color:#333;
+}
+.nav>li>a{
+	padding:0.2em 0.8em;
+}
+
+@-webkit-keyframes initialized{ from { background-color: #d6e9c6; }  to { background-color: #ffffff; } }
+@-webkit-keyframes disconnected{ from { background-color:#f2dede; } to { background-color: #ffffff; } }
+body.disconnected{
+	-webkit-animation: disconnected 2s;
+}
+body.initialized{
+	-webkit-animation: initialized 2s;
+}
+
+
+#left-tab-content{
+	height:calc(100% - 25px);
+}
+
+
+
+#splitter {
+	height: 100%;
+	width: 5px;
+	background-color: #888888;
+}
+
+#view {
+	height: 100%;
+}
+
+#left-component {
+	right: 50%;
+	margin-right: 5px;
+}
+#left-component .tab-content{
+	border-right:dotted 1px #BBBBBB;
+}
+
+#my-divider {
+	right: 50%;
+	width: 5px;
+}
+
+#right-component {
+	width: 50%;
+}
+
+
+
+
+#view-main-pane{
+	margin:2em auto;
+	max-width:400px;	
+}
+
+#position-table td{
+	font-family: VeraMono, Courier New, monospace;
+	text-align:right;
+	padding-right:5%;
+}
+#position-table thead th{
+	text-align:right;
+	padding-right:5%;
+}
+#menu-controls{
+	text-align:center;
+}
+#streamingProgress{
+	text-align:center;
+	color:#EEE;
+	text-shadow:1px 1px 2px #333;
+	position:absolute;
+}

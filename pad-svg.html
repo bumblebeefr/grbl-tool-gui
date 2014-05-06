@@ -1,0 +1,593 @@
+<svg
+   xmlns="http://www.w3.org/2000/svg"
+   version="1.1"
+   viewBox="0 0 600 1200" 
+   preserveAspectRatio="xMidYMid"
+   style="width:99%;margin:auto;"
+   >
+
+		<filter id="dropshadow" height="130%">
+      <feGaussianBlur in="SourceAlpha" stdDeviation="2"/> 
+      <feOffset dx="0.5" dy="0.5" result="offsetblur"/>
+      <feComponentTransfer>
+        <feFuncA type="linear" slope="0.4"/>
+      </feComponentTransfer>
+      <feMerge> 
+        <feMergeNode/>
+        <feMergeNode in="SourceGraphic"/> 
+      </feMerge>
+    </filter>
+
+	<filter id="bevel" filterUnits="objectBoundingBox" x="-10%" y="-10%"
+			width="150%" height="150%">
+			<feGaussianBlur in="SourceAlpha" stdDeviation="2" result="blur"/>
+			<feSpecularLighting in="blur" surfaceScale="5" specularConstant="0.5"
+			specularExponent="2" result="specOut"
+			style="lighting-color:rgb(255,255,255)">
+			<fePointLight x="-5000" y="-10000" z="20000"/>
+			</feSpecularLighting>
+			<feComposite in="specOut" in2="SourceAlpha" operator="in" result="specOut2"/>
+			<feComposite in="SourceGraphic" in2="specOut2" operator="arithmetic" k1="0"
+			k2="1" k3="1" k4="0" result="litPaint"/>
+	</filter>
+	
+     <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Calque"
+     style="display:inline"
+     transform="translate(-0.799107,222.5692)">
+    <g
+       id="bt_y_p100"
+       title="Move Y : 100 mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4863"
+         d="m 122.84375,10.90625 c -28.138939,0 -53.799707,10.498062 -73.3125,27.8125 L 122.875,112.0625 196.21875,38.71875 c -19.51494,-17.323713 -45.22762,-27.8125 -73.375,-27.8125 z"
+         class="external_xy_button" />
+      <g
+         id="g4978-5"
+         transform="matrix(0,1,-1,0,243.35491,-1.9910724)">
+        <path
+           style="fill:#d5d5ff;stroke:#666666"
+           d="m 34.995536,103.89732 -18.21875,16.59821 18.21875,16.59822 0,-7.82408 16.78125,0 0,-17.54828 -16.78125,0 0,-7.82407 z"
+           id="rect4923-4"
+           inkscape:connector-curvature="0" />
+        <text
+           transform="matrix(0,-1,1,0,0,0)"
+           xml:space="preserve"
+           style="font-size:42.7199173px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="-133.2515"
+           y="36.745121"
+           id="text4932-3"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4934-4"
+             x="-133.2515"
+             y="36.745121"
+             style="font-size:14.95197105px;font-weight:bold;-inkscape-font-specification:Sans Bold">+y</tspan></text>
+      </g>
+    </g>
+    <g
+       id="bt_y_m100"
+       title="Move Y : -100mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3267"
+         d="M 122.875,130.75 49.5,204.125 c 19.514943,17.32371 45.19637,27.84375 73.34375,27.84375 28.15477,0 53.85818,-10.54317 73.375,-27.875 L 122.875,130.75 z"
+         class="external_xy_button" />
+      <g
+         id="g5022">
+        <g
+           id="g4973-4"
+           transform="matrix(0,1,-1,0,214.07366,292.28572)">
+          <path
+             inkscape:connector-curvature="0"
+             id="rect4923-6-1"
+             d="m -81.790179,74.61607 18.21875,16.59821 -18.21875,16.59822 0,-7.82408 -16.78125,0 0,-17.54828 16.78125,0 0,-7.82407 z"
+             style="fill:#d5d5ff;stroke:#4d4d4d" />
+          <text
+             sodipodi:linespacing="125%"
+             id="text4932-6-1"
+             y="-73.720009"
+             x="-99.778358"
+             style="font-size:41.97112656px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+             xml:space="preserve"
+             transform="matrix(0,-1,1,0,0,0)"><tspan
+               style="font-size:14.68989372px;font-weight:bold;-inkscape-font-specification:Sans Bold"
+               y="-73.720009"
+               x="-99.778358"
+               id="tspan4934-1-6"
+               sodipodi:role="line">-y</tspan></text>
+        </g>
+      </g>
+    </g>
+    <g
+       id="bt_home_y"
+       title="Home Y"
+       class="home_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         id="path3323"
+         d="m 188.04464,10.350446 0,7.84375 c 15.33171,9.702697 28.36146,22.729584 38.0625,38.0625 l 8.53125,0 0,-45.90625 -46.59375,0 z"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="scale(0.96109366,1.0404813)"
+         sodipodi:linespacing="125%"
+         id="text3315"
+         y="22.820887"
+         x="210.3625"
+         style="font-size:17.7677002px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;fill:#000000;stroke:none;-inkscape-font-specification:Sans Bold"
+           y="22.820887"
+           x="210.3625"
+           id="tspan3317"
+           sodipodi:role="line">y</tspan></text>
+      <g
+         style="fill:#000000;stroke:none"
+         inkscape:label="Layer 1"
+         id="layer1-0"
+         transform="matrix(-0.04354546,0,0,0.04354546,235.57048,-0.13202622)">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 437.14509,480.57544 0,0 z m 0,0 L 274.33259,355.25 111.42634,480.62976 l 0,179.16051 c 0,4.627 4.30162,8.33874 9.625,8.33874 l 101.8125,0 0,-78.55249 c 0,-4.62701 4.27037,-8.36589 9.59375,-8.36589 l 83.65625,0 c 5.32335,0 9.59375,3.7389 9.59375,8.36589 l 0,78.55249 101.84375,0 c 5.32337,0 9.59377,-3.71172 9.59375,-8.33874 l 0,-179.21483 z m -325.71875,0.0543 0,0 z"
+           id="rect2391"
+           sodipodi:nodetypes="cccccccccccccccccc" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="M 273.3878,276.34171 42.339286,480.92527 66.677596,508.38266 274.33298,324.49848 481.9411,508.38266 506.23215,480.92527 275.2309,276.34171 l -0.89792,1.03969 -0.94518,-1.03969 z"
+           id="path2399" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 111.42634,305.79074 58.57143,0 -0.51038,34.69109 -58.06105,52.45177 0,-87.14286 z"
+           id="rect2404"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+    <g
+       id="bt_y_p10"
+       title="Move Y : 10mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4855"
+         d="m 122.84375,31.09375 c -22.56702,0 -43.167037,8.287771 -59,21.96875 l 59.03125,59 59,-59 C 166.04204,39.381521 145.41077,31.09375 122.84375,31.09375 z" />
+    </g>
+    <g
+       id="bt_x_m100"
+       title="Move X : -100mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4859"
+         d="M 40.15625,48.09375 C 22.841812,67.606543 12.3125,93.298561 12.3125,121.4375 c 0,28.14317 10.524665,53.82988 27.84375,73.34375 L 113.5,121.4375 40.15625,48.09375 z"
+         class="external_xy_button" />
+      <g
+         transform="translate(0,0.92634)"
+         id="g4978">
+        <path
+           style="fill:#e9ddaf;stroke:#666666"
+           d="m 34.995536,103.89732 -18.21875,16.59821 18.21875,16.59822 0,-7.82408 16.78125,0 0,-17.54828 -16.78125,0 0,-7.82407 z"
+           id="rect4923"
+           inkscape:connector-curvature="0" />
+        <text
+           xml:space="preserve"
+           style="font-size:46.05059052px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="24.518404"
+           y="124.41035"
+           id="text4932"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4934"
+             x="24.518404"
+             y="124.41035"
+             style="font-size:16.1177063px;font-weight:bold;-inkscape-font-specification:Sans Bold">-x</tspan></text>
+      </g>
+    </g>
+    <g
+       id="bt_x_m10"
+       title="Move X : -10mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 54.5,62.40625 C 40.819021,78.239213 32.53125,98.870481 32.53125,121.4375 c 0,22.55976 8.264397,43.20029 21.9375,59.03125 L 113.5,121.4375 54.5,62.40625 z"
+         id="path5574" />
+    </g>
+    <g
+       id="bt_x_p100"
+       title="Move X : 100mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4861"
+         d="m 205.5625,48.0625 -73.375,73.375 73.375,73.34375 c 17.31908,-19.51387 27.84375,-45.20058 27.84375,-73.34375 0,-28.14738 -10.52004,-53.860057 -27.84375,-73.375 z"
+         class="external_xy_button" />
+      <g
+         transform="translate(292.5,30.20759)"
+         id="g4973">
+        <path
+           style="fill:#e9ddaf;stroke:#4d4d4d"
+           d="m -81.790179,74.61607 18.21875,16.59821 -18.21875,16.59822 0,-7.82408 -16.78125,0 0,-17.54828 16.78125,0 0,-7.82407 z"
+           id="rect4923-6"
+           inkscape:connector-curvature="0" />
+        <text
+           xml:space="preserve"
+           style="font-size:45.20093918px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           x="-96.091324"
+           y="96.173584"
+           id="text4932-6"
+           sodipodi:linespacing="125%"><tspan
+             sodipodi:role="line"
+             id="tspan4934-1"
+             x="-96.091324"
+             y="96.173584"
+             style="font-size:15.82032871px;font-weight:bold;-inkscape-font-specification:Sans Bold">+x</tspan></text>
+      </g>
+    </g>
+    <g
+       id="bt_x_p10"
+       title="Move X : 10mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4851"
+         d="M 191.21875,62.40625 132.1875,121.4375 191.25,180.46875 c 13.6731,-15.83096 21.9375,-36.47149 21.9375,-59.03125 0,-22.567019 -8.28777,-43.198287 -21.96875,-59.03125 z" />
+    </g>
+    <g
+       id="bt_y_m10"
+       title="Move Y : -10mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3267-3"
+         d="m 122.875,130.75 -59.0625,59.0625 c 15.835248,13.68997 36.45595,21.9375 59.03125,21.9375 22.5753,0 43.22725,-8.24753 59.0625,-21.9375 L 122.875,130.75 z" />
+    </g>
+    <g
+       id="bt_y_p1"
+       title="Move Y : 1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4847"
+         d="m 122.84375,56 c -15.68118,0 -30.042946,5.520616 -41.3125,14.71875 L 122.875,112.0625 164.21875,70.71875 C 152.94637,61.511272 138.53377,56 122.84375,56 z" />
+    </g>
+    <g
+       id="bt_x_p1"
+       title="Move X : 1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4845"
+         d="m 173.5625,80.0625 -41.375,41.375 41.375,41.34375 c 9.19919,-11.26987 14.71875,-25.66158 14.71875,-41.34375 0,-15.69002 -5.51127,-30.102615 -14.71875,-41.375 z" />
+    </g>
+    <g
+       id="bt_x_m1"
+       title="Move X : -1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         d="M 72.15625,80.09375 C 62.958116,91.363304 57.4375,105.75632 57.4375,121.4375 c 0,15.68217 5.519562,30.07388 14.71875,41.34375 L 113.5,121.4375 72.15625,80.09375 z"
+         id="path5591" />
+    </g>
+    <g
+       id="bt_y_m1"
+       title="Move Y : -1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3267-3-1"
+         d="M 122.875,130.75 81.5,172.125 c 11.272604,9.2082 25.65304,14.71875 41.34375,14.71875 15.69768,0 30.10017,-5.53443 41.375,-14.75 L 122.875,130.75 z" />
+    </g>
+    <g
+       id="bt_y_p01"
+       title="Move Y : 0.1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4839"
+         d="m 122.84375,79.625 c -9.15584,0 -17.61289,2.915136 -24.5,7.90625 l 24.53125,24.53125 24.5,-24.5 C 140.48523,82.564877 132.00614,79.625 122.84375,79.625 z" />
+    </g>
+    <g
+       id="bt_x_m01"
+       title="Move X : -0.1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         d="m 89,96.90625 c -5.000358,6.89089 -7.96875,15.3661 -7.96875,24.53125 0,9.16239 2.971127,17.61023 7.96875,24.5 l 24.5,-24.5 L 89,96.90625 z"
+         id="path5598" />
+    </g>
+    <g
+       id="bt_x_p01"
+       title="Move X : 0.1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path4835"
+         d="m 156.71875,96.90625 -24.53125,24.53125 24.53125,24.53125 c 5.00678,-6.89351 7.96875,-15.35964 7.96875,-24.53125 0,-9.16515 -2.96839,-17.64036 -7.96875,-24.53125 z" />
+    </g>
+    <g
+       id="bt_y_m01"
+       title="Move Y : -0.1mm"
+       class=" xy_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path3267-3-1-1"
+         d="m 122.875,130.75 -24.53125,24.53125 c 6.88977,4.99762 15.33761,7.96875 24.5,7.96875 9.17161,0 17.66899,-2.96197 24.5625,-7.96875 L 122.875,130.75 z" />
+    </g>
+    <g
+       id="bt_home_z"
+       title="Home Z"
+       class="home_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         id="rect3288"
+         d="m 226.10714,186.60045 c -9.70104,15.33292 -22.73079,28.3598 -38.0625,38.0625 l 0,7.84375 46.59375,0 0,-45.90625 -8.53125,0 z"
+         inkscape:connector-curvature="0" />
+      <text
+         transform="scale(0.96109367,1.0404813)"
+         sodipodi:linespacing="125%"
+         id="text3315-3"
+         y="218.37427"
+         x="211.83212"
+         style="font-size:17.7677002px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;fill:#000000;stroke:none;-inkscape-font-specification:Sans Bold"
+           y="218.37427"
+           x="211.83212"
+           id="tspan3317-1"
+           sodipodi:role="line">z</tspan></text>
+      <g
+         style="fill:#000000;stroke:none"
+         inkscape:label="Layer 1"
+         id="layer1-0-6"
+         transform="matrix(-0.04354546,0,0,0.04354546,235.57048,198.51619)">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 437.14509,480.57544 0,0 z m 0,0 L 274.33259,355.25 111.42634,480.62976 l 0,179.16051 c 0,4.627 4.30162,8.33874 9.625,8.33874 l 101.8125,0 0,-78.55249 c 0,-4.62701 4.27037,-8.36589 9.59375,-8.36589 l 83.65625,0 c 5.32335,0 9.59375,3.7389 9.59375,8.36589 l 0,78.55249 101.84375,0 c 5.32337,0 9.59377,-3.71172 9.59375,-8.33874 l 0,-179.21483 z m -325.71875,0.0543 0,0 z"
+           id="rect2391-0"
+           sodipodi:nodetypes="cccccccccccccccccc" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="M 273.3878,276.34171 42.339286,480.92527 66.677596,508.38266 274.33298,324.49848 481.9411,508.38266 506.23215,480.92527 275.2309,276.34171 l -0.89792,1.03969 -0.94518,-1.03969 z"
+           id="path2399-1" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 111.42634,305.79074 58.57143,0 -0.51038,34.69109 -58.06105,52.45177 0,-87.14286 z"
+           id="rect2404-5"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+    <g
+       id="bt_home"
+       title="Home"
+       class="home_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         id="path3321"
+         d="m 11.075893,186.60045 0,45.90625 46.59375,0 0,-7.875 c -15.307425,-9.70062 -28.308452,-22.71234 -38,-38.03125 l -8.59375,0 z"
+         inkscape:connector-curvature="0" />
+      <g
+         style="fill:#000000;stroke:none"
+         inkscape:label="Layer 1"
+         id="layer1-0-6-4"
+         transform="matrix(-0.04354546,0,0,0.04354546,34.801041,198.51619)">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 437.14509,480.57544 0,0 z m 0,0 L 274.33259,355.25 111.42634,480.62976 l 0,179.16051 c 0,4.627 4.30162,8.33874 9.625,8.33874 l 101.8125,0 0,-78.55249 c 0,-4.62701 4.27037,-8.36589 9.59375,-8.36589 l 83.65625,0 c 5.32335,0 9.59375,3.7389 9.59375,8.36589 l 0,78.55249 101.84375,0 c 5.32337,0 9.59377,-3.71172 9.59375,-8.33874 l 0,-179.21483 z m -325.71875,0.0543 0,0 z"
+           id="rect2391-0-1"
+           sodipodi:nodetypes="cccccccccccccccccc" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="M 273.3878,276.34171 42.339286,480.92527 66.677596,508.38266 274.33298,324.49848 481.9411,508.38266 506.23215,480.92527 275.2309,276.34171 l -0.89792,1.03969 -0.94518,-1.03969 z"
+           id="path2399-1-2" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 111.42634,305.79074 58.57143,0 -0.51038,34.69109 -58.06105,52.45177 0,-87.14286 z"
+           id="rect2404-5-5"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+    </g>
+    <g
+       id="bt_home_x"
+       title="Home X"
+       class="home_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         id="path3325"
+         d="m 11.075893,10.350446 0,45.90625 8.59375,0 c 9.691548,-15.318911 22.692575,-28.330631 38,-38.03125 l 0,-7.875 -46.59375,0 z"
+         inkscape:connector-curvature="0" />
+      <g
+         style="fill:#000000;stroke:none"
+         inkscape:label="Layer 1"
+         id="layer1-0-6-4-4"
+         transform="matrix(-0.04354546,0,0,0.04354546,34.801041,-0.13202622)">
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 437.14509,480.57544 0,0 z m 0,0 L 274.33259,355.25 111.42634,480.62976 l 0,179.16051 c 0,4.627 4.30162,8.33874 9.625,8.33874 l 101.8125,0 0,-78.55249 c 0,-4.62701 4.27037,-8.36589 9.59375,-8.36589 l 83.65625,0 c 5.32335,0 9.59375,3.7389 9.59375,8.36589 l 0,78.55249 101.84375,0 c 5.32337,0 9.59377,-3.71172 9.59375,-8.33874 l 0,-179.21483 z m -325.71875,0.0543 0,0 z"
+           id="rect2391-0-1-6"
+           sodipodi:nodetypes="cccccccccccccccccc" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="M 273.3878,276.34171 42.339286,480.92527 66.677596,508.38266 274.33298,324.49848 481.9411,508.38266 506.23215,480.92527 275.2309,276.34171 l -0.89792,1.03969 -0.94518,-1.03969 z"
+           id="path2399-1-2-9" />
+        <path
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none"
+           d="m 111.42634,305.79074 58.57143,0 -0.51038,34.69109 -58.06105,52.45177 0,-87.14286 z"
+           id="rect2404-5-5-6"
+           sodipodi:nodetypes="ccccc" />
+      </g>
+      <text
+         transform="scale(0.96109367,1.0404813)"
+         sodipodi:linespacing="125%"
+         id="text3315-3-5"
+         y="23.101974"
+         x="34.895302"
+         style="font-size:17.7677002px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;stroke:none;font-family:Sans"
+         xml:space="preserve"><tspan
+           style="font-weight:bold;fill:#000000;stroke:none;-inkscape-font-specification:Sans Bold"
+           y="23.101974"
+           x="34.895302"
+           id="tspan3317-1-6"
+           sodipodi:role="line">x</tspan></text>
+    </g>
+    <g
+       id="bt_z_m100"
+       title="Move Z : -100mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5932-8"
+         d="m 258.87122,232.2567 c -2.77,0 -5,-2.23 -5,-5 l 0,-98.65624 37.375,0 0,98.65624 c 0,2.77 -2.23,5 -5,5 l -27.375,0 z"
+         class="external_z_button" />
+      <g
+         transform="matrix(0,-0.66269841,-0.66269841,0,351.60418,241.37465)"
+         id="g4978-5-9-9"
+         style="display:inline">
+        <path
+           inkscape:connector-curvature="0"
+           id="rect4923-4-8-3"
+           d="m 34.995536,103.89732 -18.21875,16.59821 18.21875,16.59822 0,-7.82408 16.78125,0 0,-17.54828 -16.78125,0 0,-7.82407 z"
+           style="fill:#c6e9af;stroke:#666666" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4932-3-8-8"
+           y="-27.370935"
+           x="-129.69461"
+           style="font-size:42.7199173px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"
+           transform="matrix(0,-1,-1,0,0,0)"><tspan
+             style="font-size:14.95197105px;font-weight:bold;-inkscape-font-specification:Sans Bold"
+             y="-27.370935"
+             x="-129.69461"
+             id="tspan4934-4-1-9"
+             sodipodi:role="line">-z</tspan></text>
+      </g>
+    </g>
+    <g
+       id="bt_z_m10"
+       title="Move Z : -10mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5932-29-1"
+         d="m 253.87122,204.10046 0,-75.5 37.375,0 0,75.5 -37.375,0 z" />
+    </g>
+    <g
+       id="bt_z_m1"
+       title="Move Z : -1mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6026-6-0"
+         d="m 253.87122,175.97546 0,-47.375 37.375,0 0,47.375 -37.375,0 z" />
+    </g>
+    <g
+       id="bt_z_m01"
+       title="Move Z : -0.1mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5999-8-0"
+         d="m 253.87122,151.56921 0,-22.96875 37.375,0 0,22.96875 -37.375,0 z" />
+    </g>
+    <g
+       id="bt_z_p100 "
+       title="Move Z : 100mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5932"
+         d="m 258.87122,10.600446 c -2.77,0 -5,2.23 -5,5 l 0,98.656244 37.375,0 0,-98.656244 c 0,-2.77 -2.23,-5 -5,-5 l -27.375,0 z"
+         class="external_z_button" />
+      <g
+         transform="matrix(0,0.66269841,-0.66269841,0,352.41092,1.4824966)"
+         id="g4978-5-9-9-9"
+         style="display:inline">
+        <path
+           inkscape:connector-curvature="0"
+           id="rect4923-4-8-3-3"
+           d="m 34.995536,103.89732 -18.21875,16.59821 18.21875,16.59822 0,-7.82408 16.78125,0 0,-17.54828 -16.78125,0 0,-7.82407 z"
+           style="fill:#c6e9af;stroke:#666666" />
+        <text
+           sodipodi:linespacing="125%"
+           id="text4932-3-8-8-5"
+           y="35.547794"
+           x="-132.71257"
+           style="font-size:42.7199173px;font-style:normal;font-weight:normal;line-height:125%;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;font-family:Sans"
+           xml:space="preserve"
+           transform="matrix(0,-1,1,0,0,0)"><tspan
+             style="font-size:14.95197105px;font-weight:bold;-inkscape-font-specification:Sans Bold"
+             y="35.547794"
+             x="-132.71257"
+             id="tspan4934-4-1-9-8"
+             sodipodi:role="line">+z</tspan></text>
+      </g>
+    </g>
+    <g
+       id="bt_z_p10"
+       title="Move Z : 10mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5932-29"
+         d="m 253.87122,38.75669 0,75.5 37.375,0 0,-75.5 -37.375,0 z" />
+    </g>
+    <g
+       id="bt_z_p1"
+       title="Move Z : 1mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path6026-6"
+         d="m 253.87122,66.88169 0,47.375 37.375,0 0,-47.375 -37.375,0 z" />
+    </g>
+    <g
+       id="bt_z_p01"
+       title="Move Z : 0.1mm"
+       class="z_button"
+       transform="matrix(2,0,0,2,-10.825893,-232.7567)">
+      <path
+         inkscape:connector-curvature="0"
+         id="path5999-8"
+         d="m 253.87122,91.28794 0,22.96875 37.375,0 0,-22.96875 -37.375,0 z" />
+    </g>
+  </g>
+</svg>

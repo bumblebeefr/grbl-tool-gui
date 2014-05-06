@@ -1,0 +1,68 @@
+{
+	"menu" : {
+		"grbl" : {
+			"name" : "Grbl",
+			"disconnect" : "Disconnect",
+			"autoConnect" : "Auto connection",
+			"quit" : "Quit"
+		},
+		"control" : {
+			"name" : "Control",
+			"start" : "Cycle start",
+			"hold" : "Feed Hold",
+			"reset" : "Reset"
+		},
+		"dev" : {
+			"name" : "Developpement",
+			"console" : "Console Javascript",
+			"reload" : "Reload"
+		},
+		"file" : {
+			"name" : "Gcode",
+			"open" : "Open file",
+			"new" : "New file",
+			"save" : "Save",
+			"save_as" : "Save as"
+		}
+	},
+	"status" : {
+		"flying" : {
+			"Idle" : "Idle",
+			"Queue" : "Queue",
+			"Run" : "Running",
+			"Hold" : "Hold",
+			"Home" : "Homing",
+			"Alarm" : "Alarm",
+			"Check" : "Check"
+		},
+		"panel" : {
+			"Idle" : "Idle",
+			"Queue" : "Paused",
+			"Run" : "Running",
+			"Hold" : "Feed Hold",
+			"Home" : "Homming cycle",
+			"Alarm" : "Alarm",
+			"Check" : "Check gcode mode"
+		}
+	},
+	"grbl" : {
+		"initialized" : "Grbl __version__ initialized on <em>__port__</em> (__baudrate__ b/s)",
+		"connected" : " <em>__port__</em> (__baudrate__ b/s)",
+		"disconnected" : "Not connected",
+		"error" : {
+			"newstreaming" : "Unable to start a new streaming, another one is still running."
+		}
+	},
+	"editor" : {
+		"error" : {
+			"loading_file" : "Unable to open file __path__"
+		}
+	},
+	"streaming" : {
+		"end" : "Streaming ends on __duration__ seconds",
+		"on" : "on",
+		"off" : "off",
+		"abort" : "aborted",
+		"status" : "__percent__% since __h__:__m__:__s__ "
+	}
+}
