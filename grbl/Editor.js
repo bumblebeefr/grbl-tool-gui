@@ -46,7 +46,11 @@
 			}
 		});
 		
-		Editor.editor
+		//Update preview on change
+		Editor.editor.on('change',function(){
+			document.getElementById("gcode-preview-frame").contentWindow.openGCodeFromText(Editor.editor.getValue('\n'));
+			$('#tab-gcode-preview').tab('show');
+		});
 		
 		$("#gcodeFileInput").change(function(){
 			Editor.loadFile();
