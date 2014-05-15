@@ -42,7 +42,7 @@
 	 */
 	var Grbl = {
 		_uid : 0,
-		bufferMax : 2, // nombre de lignes max dans le buffer
+		bufferMax : 1, // nombre de lignes max dans le buffer
 		initialized : false,
 		commandQueue : [], // Queue of commandLine to be sent to grbl board
 		commandBuffer : [], // CommandLines sent to grbl board buffer, but not
