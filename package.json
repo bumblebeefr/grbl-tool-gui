@@ -1,5 +1,6 @@
 {
   "name": "nw-demo",
+  "version" : "0.1-SNAPSHOT",
   "main": "index.html",
   "window": {
     "kiosk": false,
@@ -7,7 +8,15 @@
     "frame": true,
     "icon": "icon.png",
     "position": "center",
-    "width":1024,
-    "height":768
+    "width": 1024,
+    "height": 768
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bumblebeefr/grbl-tool-gui.git"
+  },
+  "license": "GPL-3.0",  
+  "dependencies": {
+	  "serialport" : "1.4.0"
   }
 }
