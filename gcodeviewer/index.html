@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" class="js canvas webgl hashchange draganddrop localstorage sessionstorage" manifest="manifest.appcache">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"> 
+    <meta charset="utf-8">
+    <title>GCode Viewer</title>
+    <style>
+      document,
+      body{
+        margin: 0;
+        padding: 0;
+		overflow:hidden;
+		width:100%;
+		height:100%;
+      }
+
+      #renderArea {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        width: 100%;
+        background-color: #000000;
+		overflow:hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="renderArea">
+    </div>
+    <script src="./modernizr.custom.93389.js"></script>
+    <script src="./jquery-1.7.1.min.js"></script>
+    <script src="./sugar-1.2.4.min.js"></script>
+    <script src="./three.min.js"></script>
+    <script src="./TrackballControls.js"></script>
+    <script src="./stats.min.js"></script>
+    <script src="./gcode-parser.js"></script>
+    <script src="./gcode-model.js"></script>
+    <script src="./renderer.js"></script>
+    <script src="./ui.js"></script>
+  </body>
+</html>

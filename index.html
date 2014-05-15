@@ -14,6 +14,7 @@
 	<link rel=stylesheet href="css/console.css">
 	<link rel=stylesheet href="css/editor.css">
 	<link rel=stylesheet href="css/pad.css">
+	<link rel=stylesheet href="css/gcode-viewer.css">
   </head>
   <body class="">
 <!--     <pre id="status"></pre>
@@ -49,6 +50,9 @@
 						  </button>
 						  <button type="button" class="btn  btn-xs btn-default" id="btn-stream-file">
 						  	<i class="fa fa-bolt"></i>&nbsp;&nbsp;Execute GCODE
+						  </button>
+						  <button type="button" class="btn  btn-xs btn-default" id="btn-preview-file">
+						  	<i class="fa fa-rocket"></i>&nbsp;&nbsp;Preview GCODE
 						  </button>
 						</div>
 					</div>
@@ -118,11 +122,15 @@
 					</div>
 					<br/>
 					<ul class="nav nav-tabs" id="right-tabs">
-					  <li class="active"><a href="#control-pad" data-toggle="tab" id="tab-console"><i class="fa fa-gamepad"></i>Contrôle pad</a></li>
+					  <li class="active"><a href="#control-pad" data-toggle="tab" id="tab-console"><i class="fa fa-gamepad"></i> Contrôle pad</a></li>
+					  <li><a href="#gcode-preview" data-toggle="tab" id="tab-gcode-preview"><i class="fa fa-rocket"></i> Gcode preview</a></li>
 					</ul>
 					<div class="tab-content" id="right-tab-content">
 						<div id="control-pad" class="tab-pane active">
-							
+
+						</div>
+						<div id="gcode-preview" class="tab-pane ">
+							<iframe id="gcode-preview-frame" src="gcodeviewer/index.html"></iframe>
 						</div>
 					</div>
 
@@ -257,6 +265,10 @@
 				e.preventDefault;
 				$(this).blur();
 				Grbl.send("$H");
+			});
+			
+			$(window).resize(function(){
+				$("#right-tab-content").height($("#view").height() - $("#right-tab-content").offset().top -10);
 			});
 		});
 

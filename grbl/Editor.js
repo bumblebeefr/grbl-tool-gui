@@ -23,6 +23,7 @@
 				}else{
 					Editor.editor.setValue(data);
 					Editor.show();
+					Editor.trigger('file.open');
 				}
 				$("#gcodeFileInput").val("");
 			});
@@ -30,9 +31,10 @@
 		},
 		show : function(){
 			$('#tab-editor').tab('show');
+			Editor.trigger('shown');
 		}
 	};
-	
+	$.observable(Editor);
 	
 	
 	$(function(){
@@ -43,6 +45,8 @@
 				Editor.setSize();
 			}
 		});
+		
+		Editor.editor
 		
 		$("#gcodeFileInput").change(function(){
 			Editor.loadFile();
@@ -59,6 +63,10 @@
 		});
 		$("#btn-stream-file").click(function(){
 			Grbl.streaming.start(Editor.editor.getValue('\n'));
+		});
+		$("#btn-preview-file").click(function(){
+			document.getElementById("gcode-preview-frame").contentWindow.openGCodeFromText(Editor.editor.getValue('\n'));
+			$('#tab-gcode-preview').tab('show');
 		});
 		
 	});
