@@ -40,12 +40,24 @@
 					$("#bt_" + axis + "_p" + j).click(function(e) {
 						e.preventDefault();
 						if(Pad.enabled && Grbl.status.status == 'Idle'){
+							if(Grbl.gcodeStatus.position != "G91"){
+								Grbl.send("G91");
+							}
+							if(Grbl.gcodeStatus.units != "G21"){
+								Grbl.send("G21");
+							}
 							Grbl.send("G01 " + axis + value);
 						}
 					});
 					$("#bt_" + axis + "_m" + j).click(function(e) {
 						e.preventDefault();
 						if(Pad.enabled && Grbl.status.status == 'Idle'){
+							if(Grbl.gcodeStatus.position != "G91"){
+								Grbl.send("G91");
+							}
+							if(Grbl.gcodeStatus.units != "G21"){
+								Grbl.send("G21");
+							}
 							Grbl.send("G01 " + axis + "-" + value);
 						}
 					});
