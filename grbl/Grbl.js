@@ -49,6 +49,7 @@
 		// yet completed
 		commandMap : {},
 		statusTimeout : null,
+		gcodeStatus : null,
 		status : {
 			status : null,
 			MPos : [ 0, 0, 0 ],
@@ -265,6 +266,7 @@
 					}
 				}
 			}
+			Grbl.gcodeStatus = gcodeStatus;
 			Grbl.trigger("gcode.status",gcodeStatus);
 			console.log(gcodeStatus);
 		}
