@@ -64,5 +64,13 @@
 		"off" : "off",
 		"abort" : "aborted",
 		"status" : "__percent__% since __h__:__m__:__s__ "
+	},
+	"gcode" : {
+		"status" : {
+			"G20" : "inches",
+			"G21" : "cm",
+			"G90" : "absolute",
+			"G91" : "relative"
+		}
 	}
 }
