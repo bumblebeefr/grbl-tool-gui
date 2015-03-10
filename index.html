@@ -119,11 +119,14 @@
 							</div>
 							&nbsp;
 							<div class="btn-group center">
-							  <button type="button" class="btn  btn-xs btn-default" id="btn-unlock" title="Feed hold">
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-unlock" title="Unlock ($X)">
 							  	<i class="fa fa-unlock"></i>&nbsp;&nbsp;Unlock
 							  </button>
-							  <button type="button" class="btn  btn-xs btn-default" id="btn-home" title="Cycle start / Resume feed">
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-home" title="Star homing cycle">
 							  	<i class="fa fa-home"></i>&nbsp;&nbsp;Homing
+							  </button>
+							  <button type="button" class="btn  btn-xs btn-default" id="btn-zero" title="Set current position as origin">
+							  	<i class="fa fa-crosshairs"></i>&nbsp;&nbsp;Zero
 							  </button>
 							</div>
 						</div>
@@ -225,6 +228,11 @@
 				e.preventDefault;
 				$(this).blur();
 				Grbl.send("$H");
+			});
+			$("#btn-zero").click(function(e){
+				e.preventDefault;
+				$(this).blur();
+				Grbl.send("G92 x0 y0 z0");
 			});
 			
 			$(window).resize(function(){
